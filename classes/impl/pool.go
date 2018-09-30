@@ -2,7 +2,7 @@ package impl
 
 import (
 	"github.com/pkg/errors"
-	"gitlab.33.cn/_site-service/miner-service-intf/mine_intf"
+	"gitlab.33.cn/site-service/miner-service-intf/mine_intf"
 	"golang.org/x/net/context"
 	"miner-service-impl/models"
 )
@@ -39,12 +39,6 @@ func (base PoolImpl) GetList(ctx context.Context, request *mine_intf.PoolListReq
 		return nil, err
 	}
 	var poolList [] *mine_intf.PoolItem
-
-	//for _, item := range l {
-	//	var poolItem *mine_intf.PoolItem
-	//	poolItem.Id = item.id
-	//	poolList = append(poolList, poolItem)
-	//}
 	var response *mine_intf.PoolListResponse
 	response.Code = 200
 	response.Data = poolList
