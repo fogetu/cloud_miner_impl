@@ -44,8 +44,6 @@ func main() {
 	s := grpc.NewServer()
 	pooService := impl.PoolImpl{}
 	mine_intf.RegisterPoolServer(s, pooService)
-	// Register reflection service on gRPC server.
-	//reflection.Register(s)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}

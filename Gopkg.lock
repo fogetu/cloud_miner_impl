@@ -43,20 +43,12 @@
   revision = "04140366298a54a039076d798123ffa108fff46c"
 
 [[projects]]
-  digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
-  name = "github.com/pkg/errors"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
-  version = "v0.8.0"
-
-[[projects]]
   branch = "master"
-  digest = "1:a2966477ac64e000a346d240a9778aa95c9ab7d799937f3a6971acbc1b7f634a"
+  digest = "1:27d6c4ef3e85c37d05318341ca9995df4f90ab587e6ecf49da2c24b339be629e"
   name = "gitlab.33.cn/site-service/miner-service-intf"
   packages = ["mine_intf"]
   pruneopts = "UT"
-  revision = "b6296a152d10a84b91e6e8342feb37567e3f550d"
+  revision = "7bec62e108281626bb8fae48c655e8dec9f48036"
   source = "git@gitlab.33.cn:site-service/miner-service-intf.git"
 
 [[projects]]
@@ -163,7 +155,6 @@
   input-imports = [
     "github.com/jinzhu/gorm",
     "github.com/jinzhu/gorm/dialects/mysql",
-    "github.com/pkg/errors",
     "gitlab.33.cn/site-service/miner-service-intf/mine_intf",
     "golang.org/x/net/context",
     "google.golang.org/grpc",
