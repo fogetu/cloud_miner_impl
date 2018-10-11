@@ -24,17 +24,17 @@ import (
 	"gitlab.33.cn/site-service/miner-service-impl/classes/impl"
 	"gitlab.33.cn/site-service/miner-service-intf/mine_intf"
 	"google.golang.org/grpc"
+
 	//"google.golang.org/grpc/reflection"
 	"log"
 	"net"
+
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 const (
 	port = ":50051"
 )
-
-// server is used to implement helloworld.GreeterServer.
-type server struct{}
 
 func main() {
 	lis, err := net.Listen("tcp", port)

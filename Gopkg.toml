@@ -32,6 +32,7 @@
 [[constraint]]
   branch = "master"
   name = "gitlab.33.cn/site-service/miner-service-intf"
+  source = "git@gitlab.33.cn:site-service/miner-service-intf.git"
 
 [[constraint]]
   branch = "master"
