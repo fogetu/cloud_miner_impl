@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"gitlab.33.cn/site-service/miner-service-intf/mine_intf"
+	"github.com/fogetu/miner_service_intf/mine_intf"
 )
 
 // City 城市

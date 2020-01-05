@@ -21,8 +21,8 @@
 package main
 
 import (
-	"gitlab.33.cn/site-service/miner-service-impl/classes/impl"
-	"gitlab.33.cn/site-service/miner-service-intf/mine_intf"
+	"github.com/fogetu/miner_service_impl/classes/impl"
+	"github.com/fogetu/miner_service_intf/mine_intf"
 	"google.golang.org/grpc"
 
 	//"google.golang.org/grpc/reflection"

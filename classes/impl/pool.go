@@ -1,9 +1,9 @@
 package impl
 
 import (
-	"gitlab.33.cn/site-service/miner-service-impl/classes/models/db/poolmodel"
+	"github/fogetu/miner_service_impl/classes/models/db/poolmodel"
 
-	"gitlab.33.cn/site-service/miner-service-intf/mine_intf"
+	"github/fogetu/miner_service_intf/mine_intf"
 	"golang.org/x/net/context"
 )
 
