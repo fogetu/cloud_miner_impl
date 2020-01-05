@@ -1,10 +1,2 @@
 /vendor
-/build
-.DS_Store
 .idea
-/composer.lock
-/application/runtime
-
-tests/_output/*
-tests/_output/*
-/11211
