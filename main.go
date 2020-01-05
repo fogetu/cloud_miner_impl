@@ -41,6 +41,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+	log.Printf("impl is started: listen port: %s", string(port))
 	s := grpc.NewServer()
 	pooService := impl.PoolImpl{}
 	mine_intf.RegisterPoolServer(s, pooService)
