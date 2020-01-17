@@ -21,31 +21,29 @@
 package main
 
 import (
+	"github.com/astaxie/beego/logs"
+	"github.com/fogetu/go_system/system_config"
 	"github.com/fogetu/miner_service_impl/classes/impl"
 	"github.com/fogetu/miner_service_intf/mine_intf"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"google.golang.org/grpc"
-
-	//"google.golang.org/grpc/reflection"
 	"log"
 	"net"
-
-	_ "github.com/jinzhu/gorm/dialects/mysql"
-)
-
-const (
-	port = ":50051"
 )
 
 func main() {
+	var port string
+	port = system_config.Configer().String("httpport")
+	port = ":" + port
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatalf("failed to listen: %v", err)
+		logs.Error("failed to listen: %v", err)
 	}
 	log.Printf("impl is started: listen port: %s", string(port))
 	s := grpc.NewServer()
 	pooService := impl.PoolImpl{}
 	mine_intf.RegisterPoolServer(s, pooService)
 	if err := s.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %v", err)
+		logs.Error("failed to serve: %v", err)
 	}
 }
