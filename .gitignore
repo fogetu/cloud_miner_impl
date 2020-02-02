@@ -1,4 +1,8 @@
 /vendor
-cloud_miner
+/miner_service_impl
 .env
 .idea
+/storage
+/go.sum
+/conf/stg.app.conf
+/conf/prod.app.conf

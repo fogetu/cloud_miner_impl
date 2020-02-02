@@ -24,14 +24,34 @@ import (
 	"github.com/astaxie/beego/logs"
 	"github.com/fogetu/go_system/system_config"
 	"github.com/fogetu/miner_service_impl/classes/impl"
+	"github.com/fogetu/miner_service_impl/classes/models/db/pool"
 	"github.com/fogetu/miner_service_intf/mine_intf"
+	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"google.golang.org/grpc"
 	"log"
 	"net"
 )
 
+var (
+	poolDB *gorm.DB
+)
+
 func main() {
+	configer := system_config.Configer()
+	dbConnect := configer.String("DB_CONNECTION")
+	dbHost := configer.String("DB_HOST")
+	dbPort := configer.String("DB_PORT")
+	dbDatabase := configer.String("DB_DATABASE")
+	userName := configer.String("DB_USERNAME")
+	userPassword := configer.String("DB_PASSWORD")
+	logs.Info(userName+":"+userPassword+"@tcp("+dbHost+":"+dbPort+")/"+dbDatabase+"?charset=utf8&parseTime=True&loc=Local")
+	poolDB, err := gorm.Open(dbConnect, userName+":"+userPassword+"@tcp("+dbHost+":"+dbPort+")/"+dbDatabase+"?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
+		panic("连接数据库失败")
+	}
+	pool.InitDB(poolDB)
+	defer poolDB.Close()
 	var port string
 	port = system_config.Configer().String("httpport")
 	port = ":" + port
