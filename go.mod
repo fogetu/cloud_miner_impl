@@ -11,6 +11,6 @@ require (
 	github.com/fogetu/go_system v0.0.0-20200202144903-0f8926da2ef7
 	github.com/fogetu/miner_service_impl v0.0.0-00010101000000-000000000000
 	github.com/jinzhu/gorm v1.9.11
-	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553
+	golang.org/x/net v0.7.0
 	google.golang.org/grpc v1.26.0
 )
